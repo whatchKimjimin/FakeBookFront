@@ -1,0 +1,10 @@
+<section id="join">
+  <h2>FAKEBOOK</h2>
+  <form (ngSubmit)="onSubmit()">
+    <input type="email" placeholder=" EMAIL" name="useremail" [(ngModel)]="user.useremail" required>
+    <input type="text" placeholder=" NAME" name="username" [(ngModel)]="user.username" required>
+    <input type="PASSWORD" placeholder=" PASSWORD" name="userpassword" [(ngModel)]="user.userpassword" required>
+    <button type="submit">create</button>
+    <a href="/login">Log In</a>
+  </form>
+</section>

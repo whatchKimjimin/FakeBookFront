@@ -1,0 +1,177 @@
+<section id="writeBox">
+  <div class="writeForm">
+    <div class="profile"></div>
+    <form (ngSubmit)="onSubmit()">
+      <textarea placeholder=" 무슨 생각을 하고 계신가요?"  name="content" [(ngModel)]="timeLineWriteData.content"></textarea>
+      <button>올리기</button>
+    </form>
+  </div>
+</section>
+<section id="news">
+  <!--<div class="feed">-->
+    <!--<div class="top">-->
+      <!--<div class="profile"></div>-->
+      <!--<span class="user_name">TEST_USER</span><br>-->
+      <!--<span class="write_time">1시간</span>-->
+      <!--<i class="material-icons">more_horiz</i>-->
+      <!--<div id="feedSettingBox">-->
+
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="middle">-->
+      <!--<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad commodi, accusamus exercitationem libero doloribus possimus vel, illum illo voluptas ut natus! Laborum, ab nihil quibusdam reprehenderit ratione nobis delectus harum.</p>-->
+      <!--<div class="img">-->
+        <!--&lt;!&ndash;<img src="img/IMG_0184.jpg" alt="img" width="480" height="786">&ndash;&gt;-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="state">-->
+				<!--<span class="likeCount">-->
+					<!--<i class="material-icons">thumb_up</i> 10명-->
+				<!--</span>-->
+      <!--<span class="commentCount">-->
+					<!--댓글 10개-->
+				<!--</span>-->
+    <!--</div>-->
+    <!--<div class="bottom">-->
+      <!--<span class="like"><i class="material-icons">thumb_up</i>좋아요</span>-->
+      <!--<span><i class="material-icons">chat_bubble_outline</i>댓글 달기</span>-->
+    <!--</div>-->
+    <!--<div class="commentBox">-->
+      <!--<div class="commentForm">-->
+        <!--<div class="profile"></div>-->
+        <!--<form>-->
+          <!--<input type="text" placeholder=" 댓글을 입력하세요...">-->
+        <!--</form>-->
+      <!--</div>-->
+      <!--<div class="comment">-->
+        <!--<div class="profile"></div>-->
+        <!--<span class="content">-->
+						<!--<span class="name">Lorem </span> <br>-->
+						<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolor ipsum beatae ad sequi, sapiente necessitatibus omnis asperiores ullam, molestias error, consequatur cumque nam rerum! Quibusdam asperiores odio, nisi accusamus?-->
+					<!--</span>-->
+        <!--<a href="#" class="replyBtn">답글 달기</a>-->
+      <!--</div>-->
+      <!--<div class="comment">-->
+        <!--<div class="profile"></div>-->
+        <!--<span class="content">-->
+						<!--<span class="name">Lorem </span> <br>-->
+						<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolor ipsum beatae ad sequi, sapiente necessitatibus omnis asperiores ullam, molestias error, consequatur cumque nam rerum! Quibusdam asperiores odio, nisi accusamus?-->
+					<!--</span>-->
+        <!--<a href="#" class="replyBtn">답글 달기</a><br>-->
+        <!--&lt;!&ndash; <span class="showReplyBtn">-->
+                      <!--<i class="material-icons">reply</i> 답글 3개-->
+                  <!--</span> &ndash;&gt;-->
+        <!--<div class="replyBox">-->
+          <!--<div class="reply">-->
+            <!--<div class="profile"></div>-->
+            <!--<span class="content">-->
+								<!--<span class="name">Lorem</span><br>-->
+								<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae veniam voluptate accusamus consectetur dolore, voluptas ab amet, blanditiis numquam hic id eos animi, est similique consequuntur laboriosam sapiente rerum adipisci.-->
+							<!--</span>-->
+          <!--</div>-->
+          <!--<div class="reply">-->
+            <!--<div class="profile"></div>-->
+            <!--<span class="content">-->
+								<!--<span class="name">Lorem</span><br>-->
+								<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae veniam voluptate accusamus consectetur dolore, voluptas ab amet, blanditiis numquam hic id eos animi, est similique consequuntur laboriosam sapiente rerum adipisci.-->
+							<!--</span>-->
+          <!--</div>-->
+          <!--<div class="reply">-->
+            <!--<div class="profile"></div>-->
+            <!--<form class="content">-->
+              <!--<input type="text" placeholder=" 답글 달기...">-->
+            <!--</form>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<a href="#" class="more">댓글 더 보기</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="feed">-->
+    <!--<div class="top">-->
+      <!--<div class="profile"></div>-->
+      <!--<span class="user_name">TEST_USER</span><br>-->
+      <!--<span class="write_time">1시간</span>-->
+    <!--</div>-->
+    <!--<div class="middle">-->
+      <!--<p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad commodi, accusamus exercitationem libero doloribus possimus vel, illum illo voluptas ut natus! Laborum, ab nihil quibusdam reprehenderit ratione nobis delectus harum.</p>-->
+      <!--<div class="img"></div>-->
+    <!--</div>-->
+    <!--<div class="bottom">-->
+      <!--<span>좋아요</span>-->
+      <!--<span>댓글 달기</span>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="feed" *ngFor="let data of timeline">
+    <div class="top">
+      <div class="profile" (click)="routeService.gotoProfile(data.Users_id)"></div>
+      <span class="user_name" (click)="routeService.gotoProfile(data.Users_id)">{{ data.username }}</span><br>
+      <span class="write_time">{{ data.WRITEHOUR }}시간</span>
+    </div>
+    <div class="middle">{{ data.content }}</div>
+    <div class="state">
+      <span class="likeCount">
+        <i class="material-icons">thumb_up</i> {{ data.LikeCount }} 명
+      </span>
+      <span class="commentCount" (click)="showComment(data)">
+        댓글 {{ data.CommentCount }}개
+      </span>
+    </div>
+    <div class="bottom">
+      <span *ngIf="data.LIKE === 'TRUE'" class="like" (click)="unLiked(data)" ><i class="material-icons">thumb_up</i>좋아요</span>
+      <span *ngIf="data.LIKE === 'FALSE'" (click)="liked(data)" ><i class="material-icons">thumb_up</i>좋아요</span>
+      <span (click)="showComment(data)">댓글 달기</span>
+    </div>
+    <div class="commentBox" [hidden]="data.commentShow">
+      <div class="commentForm">
+        <div class="profile"></div>
+        <form (ngSubmit)="CommentSubmit(data.id)">
+          <input type="text" placeholder=" 댓글을 입력하세요..." name="content" [(ngModel)]="commentWriteData.content">
+        </form>
+      </div>
+      <div class="comment" *ngFor="let comment of commentData[data.id]">
+        <div class="profile"></div>
+        <span class="content">
+						<span class="name" (click)="routeService.gotoProfile(comment.Users_id)">{{ comment.username }}</span> <br>
+						{{ comment.content}}
+					</span>
+        <a href="#" class="replyBtn" >답글 달기</a>
+      </div>
+      <div class="comment" [hidden]="1">
+        <div class="profile"></div>
+        <span class="content">
+						<span class="name">Lorem </span> <br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolor ipsum beatae ad sequi, sapiente necessitatibus omnis asperiores ullam, molestias error, consequatur cumque nam rerum! Quibusdam asperiores odio, nisi accusamus?
+					</span>
+        <a href="#" class="replyBtn">답글 달기</a><br>
+        <!-- <span class="showReplyBtn">
+                      <i class="material-icons">reply</i> 답글 3개
+                  </span> -->
+        <div class="replyBox">
+          <div class="reply">
+            <div class="profile"></div>
+            <span class="content">
+								<span class="name">Lorem</span><br>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae veniam voluptate accusamus consectetur dolore, voluptas ab amet, blanditiis numquam hic id eos animi, est similique consequuntur laboriosam sapiente rerum adipisci.
+							</span>
+          </div>
+          <div class="reply">
+            <div class="profile"></div>
+            <span class="content">
+								<span class="name">Lorem</span><br>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae veniam voluptate accusamus consectetur dolore, voluptas ab amet, blanditiis numquam hic id eos animi, est similique consequuntur laboriosam sapiente rerum adipisci.
+							</span>
+          </div>
+          <div class="reply">
+            <div class="profile"></div>
+            <form class="content">
+              <input type="text" placeholder=" 답글 달기...">
+            </form>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="more">댓글 더 보기</a>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,36 @@
+<section id="profile">
+  <div class="in">
+    <div class="cover">
+
+    </div>
+    <div class="profile">
+
+    </div>
+    <div class="username">
+      <span>{{ PROFILE_DATA.userName }}</span>
+    </div>
+    <div class="menu">
+      <div (click)="timeLineShow()">
+        <span >타임라인</span>
+      </div>
+      <div (click)="friendListShow()">
+        <span>친구</span>
+      </div>
+      <div class="friendRequestBtn">
+        <span [hidden]="ME_FRIENDS" (click)="requestFriend()">친구 추가</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-mytimeline [hidden]="timelineShow"></app-mytimeline>
+
+<div id="friendListBox" [hidden]="!timelineShow">
+  <div class="ListContent">
+    <div class="list" *ngFor="let data of friendListData">
+      <div class="profile"></div>
+      <b class="username">{{ data.username }}</b>
+    </div>
+
+  </div>
+</div>

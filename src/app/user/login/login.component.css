@@ -1,0 +1,43 @@
+
+#login {
+  width: 100%;
+  height: auto;
+  padding: 70px 0;
+
+  text-align: center;
+  background-color: #4267b2;
+}
+#login > h2 {
+  color: #eee;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+#login > form {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+}
+#login > form > input {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  border:#aaa solid 1px;
+  margin: 5px 0;
+  font-size: 15px;
+}
+#login > form > button {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #365899;
+  border:#29487d solid 1px;
+  color: #eee;
+  font-size: 15px;
+}
+#login > form > a {
+  color: #9cb4d8;
+  text-decoration: none;
+}
+#login > form > a:hover {
+  text-decoration: underline;
+}

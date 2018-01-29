@@ -1,0 +1,35 @@
+<header *ngIf="this.sessionService.Active">
+  <div class="in">
+    <div id="logo" (click)="routeService.gotoHome()">
+      <span>FAKEBOOK</span>
+    </div>
+    <div id="menu">
+      <div (click)="routeService.gotoProfile( sessionService.USER_ID )">
+        <div class="profile"></div>
+        <span>{{ sessionService.USER_NAME }}</span>
+      </div>
+      <div>
+        <span (click)="showResponseFriendBox()">FRIENDS</span>
+        <div id="requestFriendBox" [hidden]="ResponseFriendBox">
+          <div class="top">
+            <span>친구 요청</span>
+          </div>
+          <div class="list" *ngFor="let data of ResponseFriendListData" [hidden]="data.hide">
+            <div class="profile"></div>
+            <b class="username">{{ data.username }}</b>
+            <div class="btnBox">
+              <button (click)="agreeFriend(data.id , data)">수락</button>
+              <button>거절</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>NOTICES</div>
+      <div>
+        <!--<i class="material-icons">arrow_drop_down</i>-->
+        <span (click)="logout()">LOGOUT</span>
+      </div>
+    </div>
+  </div>
+</header>

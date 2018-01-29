@@ -1,0 +1,291 @@
+/* WRITEBOX */
+#writeBox{
+  width: 100%;
+  height: auto;
+  padding-top: 70px;
+}
+#writeBox > .writeForm{
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  margin: 0 auto;
+  border:#ccc solid 1px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+#writeBox > .writeForm > .profile{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee;
+  float: left;
+}
+#writeBox > .writeForm > form > textarea{
+  width: 70%;
+  height: auto;
+  margin-left: 10px;
+  border:none;
+  margin-top: 15px;
+  resize: none;
+}
+
+
+/* NEWS */
+#news{
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+}
+#news > .feed{
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  border:#ddd solid 1px;
+  border-radius: 3px;
+  margin: 5px auto;
+}
+/* FEED TOP */
+#news > .feed > .top{
+  width: 100%;
+  height: 50px;
+  position: relative;
+  float: left;
+}
+#news > .feed > .top > .profile{
+  width: 40px;
+  height: 40px;
+  background-color: #eee;
+  border-radius: 50%;
+  float: left;
+  margin-right: 8px;
+}
+#news > .feed > .top > .user_name{
+  font-size: 14px;
+}
+#news > .feed > .top > .write_time{
+  font-size: 12px;
+}
+#news > .feed > .top > i{
+  float: right;
+  margin-top: -23px;
+  color: #606770;
+  cursor: pointer;
+}
+
+#news > .feed > .top > #feedSettingBox{
+  display: none;
+  width: 250px;
+  height: auto;
+  padding: 10px;
+  background-color: #fff;
+  border:#ddd solid 1px;
+  border-radius: 3px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+/* FEED MIDDLE */
+
+#news > .feed > .middle > .content{
+  color:#1d2129;
+  font-size: 14px;
+}
+#news > .feed > .middle > .img{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* FEED STATE */
+#news > .feed > .state{
+  width: 100%;
+  height: 20px;
+  margin-top: 7px;
+}
+#news > .feed > .state > .likeCount{
+  font-size: 13px;
+  float: left;
+}
+#news > .feed > .state > .likeCount > i{
+  font-size: 15px;
+  color: rgb(64, 128, 255);
+}
+#news > .feed > .state > .commentCount{
+  font-size: 13px;
+  float: right;
+  cursor: pointer;
+}
+
+/* FEED BOTTOM */
+#news > .feed > .bottom{
+  width: 100%;
+  height: 40px;
+  border-top: #eee solid 1px;
+  margin-top: 5px;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+#news > .feed > .bottom > span{
+  color: #616770;
+  font-size: 13px;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+#news > .feed > .bottom > span:hover{
+  text-decoration: underline;
+}
+
+#news > .feed > .bottom > span > i{
+  font-size: 15px;
+  margin-right: 5px;
+}
+#news > .feed > .bottom > .like{
+  color: rgb(64, 128, 255);
+}
+
+/* FEED COMMENTBOX */
+#news > .feed > .commentBox{
+  width: 104.2%;
+  height: auto;
+  padding: 5px 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #e1e2e3;
+  background-color: #f6f7f9;
+  position: relative;
+  left: -10px;
+  box-sizing: border-box;
+
+}
+
+#news > .feed > .commentBox > .commentForm{
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+
+}
+#news > .feed > .commentBox > .commentForm > .profile{
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  border-radius: 50%;
+  float: left;
+}
+#news > .feed > .commentBox > .commentForm > form > input{
+  width: 90%;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 20px;
+  border:1px solid #dddfe2;
+  font-size: 13px;
+}
+
+#news > .feed > .commentBox > .comment{
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+}
+#news > .feed > .commentBox > .comment > .profile{
+  width: 32px;
+  height: 32px;
+  background-color: #eee;
+  border-radius: 50%;
+  float: left;
+  margin-right: 5px;
+}
+#news > .feed > .commentBox > .comment > .content{
+  font-size: 13px;
+  word-wrap: break-word;
+  display: inline-block;
+  width: 90%;
+}
+#news > .feed > .commentBox > .comment > .content > .name{
+  color: #365899;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+#news > .feed > .commentBox > .comment > .replyBtn{
+  font-size: 12px;
+  color: #365899;
+  text-decoration: none;
+  margin-left: 37px;
+}
+#news > .feed > .commentBox > .comment > .replyBtn:hover{
+  text-decoration: underline;
+}
+#news > .feed > .commentBox > .comment > .showReplyBtn{
+  font-size: 13px;
+  display: inline-block;
+  color: #365899;
+  margin-left: 40px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+#news > .feed > .commentBox > .comment > .showReplyBtn > i{
+  position: relative;
+  transform: rotate(180deg);
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+#news > .feed > .commentBox > .comment > .replyBox{
+  width: 100%;
+  height: auto;
+  padding:10px 0;
+  padding-left: 30px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+#news > .feed > .commentBox > .comment > .replyBox > .reply{
+  width: 100%;
+  height: auto;
+  padding: 5px 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-left: 2px solid #dddfe2;
+}
+#news > .feed > .commentBox > .comment > .replyBox > .reply > .profile{
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  float: left;
+}
+#news > .feed > .commentBox > .comment > .replyBox > .reply > .content{
+  display: inline-block;
+  width: 90%;
+  margin-left: 10px;
+}
+#news > .feed > .commentBox > .comment > .replyBox > .reply > .content > .name{
+  color: #365899;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+#news > .feed > .commentBox > .comment > .replyBox > .reply > .content > input{
+  width: 90%;
+  height: 25px;
+  margin-left: 5px;
+  border-radius: 20px;
+  border:1px solid #dddfe2;
+  font-size: 13px;
+}
+
+
+
+#news > .feed > .commentBox > .more{
+  font-size: 13px;
+  color: #365899;
+  text-decoration: none;
+}
+#news > .feed > .commentBox > .more:hover{
+  text-decoration: underline;
+}
